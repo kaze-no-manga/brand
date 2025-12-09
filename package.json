@@ -2,7 +2,7 @@
   "name": "@kaze-no-manga/brand",
   "version": "0.0.0",
   "description": "🎨 Design tokens and Tailwind preset for Kaze no Manga",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "lint": "concurrently npm:lint:* --prefixColors auto",
     "lint:format": "biome check --write",
@@ -10,9 +10,19 @@
     "lint:engines": "ls-engines",
     "lint:publish": "publint --strict",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf --glob ./{colors,scripts}/**/*.{d.ts,js} ./vitest*.{d.ts,js}",
     "prebuild": "npm run clean",
     "build": "tsc",
     "prepare": "[ \"$CI\" = \"true\" ] || [ \"$GITHUB_ACTIONS\" = \"true\" ] && echo 'Skipping husky' && exit 0 || husky"
+  },
+  "exports": {},
+  "files": [],
+  "engines": {
+    "node": ">= 20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "repository": {
     "type": "git",
@@ -37,6 +47,16 @@
     "url": "https://github.com/kaze-no-manga/brand/issues"
   },
   "homepage": "https://github.com/kaze-no-manga/brand#readme",
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      "@semantic-release/git"
+    ]
+  },
   "devDependencies": {
     "@biomejs/biome": "^2.3.8",
     "@semantic-release/changelog": "^6.0.3",
