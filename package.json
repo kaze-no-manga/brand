@@ -1,0 +1,56 @@
+{
+  "name": "@kaze-no-manga/brand",
+  "version": "0.0.0",
+  "description": "🎨 Design tokens and Tailwind preset for Kaze no Manga",
+  "main": "index.js",
+  "scripts": {
+    "lint": "concurrently npm:lint:* --prefixColors auto",
+    "lint:format": "biome check --write",
+    "lint:lockfile": "lockfile-lint --path package-lock.json",
+    "lint:engines": "ls-engines",
+    "lint:publish": "publint --strict",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "prepare": "[ \"$CI\" = \"true\" ] || [ \"$GITHUB_ACTIONS\" = \"true\" ] && echo 'Skipping husky' && exit 0 || husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaze-no-manga/brand.git"
+  },
+  "keywords": [
+    "kaze-no-manga",
+    "design-tokens",
+    "design-system",
+    "tailwind",
+    "tailwindcss",
+    "tailwind-preset",
+    "theme",
+    "colors",
+    "typography",
+    "manga",
+    "styling"
+  ],
+  "author": "Zweer <n.olivieriachille@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaze-no-manga/brand/issues"
+  },
+  "homepage": "https://github.com/kaze-no-manga/brand#readme",
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.8",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@tsconfig/node22": "^22.0.5",
+    "@types/node": "^24.10.2",
+    "concurrently": "^9.2.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "lockfile-lint": "^4.14.1",
+    "ls-engines": "^0.9.3",
+    "publint": "^0.3.15",
+    "rimraf": "^6.1.2",
+    "semantic-release": "^25.0.2",
+    "typescript": "^5.9.3"
+  }
+}
