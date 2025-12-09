@@ -1,0 +1,13 @@
+{
+  "name": "Brand Developer",
+  "version": "1.0.0",
+  "description": "Specialized agent for Kaze no Manga brand package development",
+  "instructions": "file:.kiro/steering/agent-prompt.md",
+  "context": [
+    "file:README.md",
+    "file:.kiro/steering/tech.md",
+    "file:.kiro/steering/conventions.md",
+    "file:.kiro/steering/tokens.md",
+    "file:.kiro/steering/dependencies.md"
+  ]
+}
