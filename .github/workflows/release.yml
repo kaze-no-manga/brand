@@ -1,0 +1,11 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  release:
+    uses: kaze-no-manga/.github/.github/workflows/npm-release.yml@main
