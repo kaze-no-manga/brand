@@ -4,7 +4,9 @@
   "description": "🎨 Design tokens and Tailwind preset for Kaze no Manga",
   "type": "module",
   "scripts": {
+    "prelint": "npm run build",
     "lint": "concurrently npm:lint:* --prefixColors auto",
+    "postlint": "npm run clean",
     "lint:format": "biome check --write",
     "lint:lockfile": "lockfile-lint --path package-lock.json",
     "lint:engines": "ls-engines",
@@ -14,10 +16,10 @@
     "pretest:coverage": "npm run clean",
     "test:coverage": "vitest run --coverage",
     "posttest:coverage": "coverage-badge-readme",
-    "validate": "npm run lint && npm run test && npm run build",
     "clean": "rimraf --glob ./{lib,test}/**/*.{d.ts,js} ./vitest*.{d.ts,js}",
     "prebuild": "npm run clean",
     "build": "tsc",
+    "script:favicons": "tsx scripts/generate-favicons.ts",
     "prepare": "[ \"$CI\" = \"true\" ] || [ \"$GITHUB_ACTIONS\" = \"true\" ] && echo 'Skipping husky' && exit 0 || husky"
   },
   "exports": {
@@ -36,6 +38,7 @@
   "files": [
     "lib",
     "assets",
+    "scripts",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"
@@ -89,6 +92,7 @@
     "@vitest/coverage-v8": "^4.0.15",
     "@zweer/coverage-badge-readme": "^1.2.2",
     "concurrently": "^9.2.1",
+    "favicons": "^7.2.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "lockfile-lint": "^4.14.1",
@@ -96,6 +100,7 @@
     "publint": "^0.3.15",
     "rimraf": "^6.1.2",
     "semantic-release": "^25.0.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.15"
   }

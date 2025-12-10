@@ -1,7 +1,5 @@
 "package.json":
-  - "bash -c 'npm run build'"
   - "bash -c 'npm run lint'"
-  - "bash -c 'npm run clean'"
 
 "*.ts":
   - "bash -c 'npm run build'"
