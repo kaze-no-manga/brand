@@ -19,7 +19,6 @@
     "clean": "rimraf --glob ./{lib,test}/**/*.{d.ts,js} ./vitest*.{d.ts,js}",
     "prebuild": "npm run clean",
     "build": "tsc",
-    "favicons": "tsx scripts/generate-favicons.ts",
     "docs:dev": "npm run storybook -w docs",
     "docs:build": "npm run build-storybook -w docs",
     "prepare": "[ \"$CI\" = \"true\" ] || [ \"$GITHUB_ACTIONS\" = \"true\" ] && echo 'Skipping husky' && exit 0 || husky"
@@ -39,8 +38,8 @@
   },
   "files": [
     "lib",
-    "assets",
-    "scripts",
+    "assets/logo/*.png",
+    "assets/square/*.png",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"

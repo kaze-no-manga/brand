@@ -119,22 +119,6 @@ import { preset } from '@kaze-no-manga/brand/preset'
 import '@kaze-no-manga/brand/css'
 ```
 
-## Favicons
-
-Generate favicons from the source logo:
-
-```bash
-npm run favicons
-```
-
-This creates all necessary favicon formats in `assets/favicons/` including:
-- Standard favicons (16x16, 32x32, etc.)
-- Apple touch icons
-- Android chrome icons
-- Windows tiles
-- Web app manifest
-- HTML snippet for easy integration
-
 ## Design Tokens
 
 ### Colors
@@ -254,11 +238,8 @@ brand/
 │   │   └── variables.css
 │   └── index.ts
 ├── assets/
-│   ├── logo/               # Logo variants
-│   ├── square/             # Source logo files
-│   └── favicons/           # Generated favicons
-├── scripts/
-│   └── generate-favicons.ts
+│   ├── logo/               # Logo variants (PNG)
+│   └── square/             # Square logo (PNG)
 ├── test/                   # Test suite (124 tests)
 └── README.md
 ```
