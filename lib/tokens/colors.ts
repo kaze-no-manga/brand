@@ -27,6 +27,7 @@ export const colors = {
     700: '#404040',
     800: '#262626',
     900: '#171717',
+    950: '#0a0a0a', // Extra dark for dark mode
   },
 
   /** Success state (green) */
@@ -83,6 +84,37 @@ export const colors = {
     700: '#1d4ed8',
     800: '#1e40af',
     900: '#1e3a8a',
+  },
+
+  /** Theme-aware semantic colors */
+  background: {
+    light: '#fafafa', // neutral-50
+    dark: '#0a0a0a', // neutral-950
+  },
+
+  surface: {
+    light: '#ffffff', // white
+    dark: '#171717', // neutral-900
+  },
+
+  text: {
+    primary: {
+      light: '#171717', // neutral-900
+      dark: '#fafafa', // neutral-50
+    },
+    secondary: {
+      light: '#525252', // neutral-600
+      dark: '#a3a3a3', // neutral-400
+    },
+    muted: {
+      light: '#737373', // neutral-500
+      dark: '#737373', // neutral-500 (same for both)
+    },
+  },
+
+  border: {
+    light: '#e5e5e5', // neutral-200
+    dark: '#404040', // neutral-700
   },
 } as const;
 

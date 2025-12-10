@@ -20,7 +20,11 @@ describe('Tailwind Preset', () => {
 
   describe('Theme extensions', () => {
     it('extends colors', () => {
-      expect(preset.theme.extend.colors).toBe(colors);
+      // Should include original colors plus CSS variables
+      expect(preset.theme.extend.colors.primary).toBe(colors.primary);
+      expect(preset.theme.extend.colors.neutral).toBe(colors.neutral);
+      expect(preset.theme.extend.colors.background).toBe('var(--color-background)');
+      expect(preset.theme.extend.colors.surface).toBe('var(--color-surface)');
     });
 
     it('extends font families', () => {

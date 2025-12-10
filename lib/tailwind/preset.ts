@@ -5,9 +5,18 @@ import { spacing } from '../tokens/spacing.js';
 import { typography } from '../tokens/typography.js';
 
 export const preset = {
+  darkMode: ['class', 'media'],
   theme: {
     extend: {
-      colors,
+      colors: {
+        ...colors,
+        // Tailwind-compatible semantic colors
+        background: 'var(--color-background)',
+        surface: 'var(--color-surface)',
+        foreground: 'var(--color-text-primary)',
+        muted: 'var(--color-text-muted)',
+        border: 'var(--color-border)',
+      },
       fontFamily: typography.fontFamily,
       fontSize: typography.fontSize,
       fontWeight: typography.fontWeight,

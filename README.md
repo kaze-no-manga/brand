@@ -77,6 +77,18 @@ const baseSpacing = spacing[4]
   Click me
 </button>
 
+// Dark mode support
+<div className="bg-background text-foreground">
+  Adapts to light/dark mode automatically
+</div>
+
+// Manual dark mode toggle
+<html className="dark-mode">
+  <div className="bg-surface text-foreground border border-border">
+    Dark mode content
+  </div>
+</html>
+
 // Using design tokens programmatically
 import { colors, spacing } from '@kaze-no-manga/brand'
 
@@ -86,8 +98,11 @@ const styles = {
 }
 
 // Using CSS variables
-<div style={{ color: 'var(--color-primary-500)' }}>
-  Custom styled
+<div style={{ 
+  color: 'var(--color-text-primary)',
+  backgroundColor: 'var(--color-background)'
+}}>
+  Theme-aware styling
 </div>
 ```
 
@@ -140,11 +155,20 @@ Primary palette based on **purple/lilac** theme:
 
 ### Logo
 
-- **Primary Logo**: Full color on light backgrounds
-- **Secondary Logo**: White on dark backgrounds
-- **Icon**: Standalone icon for small spaces
+- **Primary Logo** (`logo.svg`): Full color with gradient background
+- **Icon** (`logo-icon.svg`): Circular icon for small spaces
+- **Light Backgrounds** (`logo-white.svg`): For use on light backgrounds
+- **Monochrome** (`logo-mono.svg`): Single color, adapts to text color
 - **Minimum Size**: 32px height
 - **Clear Space**: 16px on all sides
+
+### Logo Concept
+
+The logo evokes "Kaze no Manga" (Wind of Manga) through:
+- **Wind lines**: Flowing horizontal lines reminiscent of manga speed lines
+- **Typography**: Clean, modern typeface with hierarchical sizing
+- **Colors**: Primary purple palette with subtle gradients
+- **Minimalism**: Simple geometric forms for versatility
 
 ### Color Usage
 

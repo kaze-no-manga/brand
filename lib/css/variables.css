@@ -22,6 +22,35 @@
   --color-neutral-700: #404040;
   --color-neutral-800: #262626;
   --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+
+  /* Semantic Colors - Success */
+  --color-success-50: #f0fdf4;
+  --color-success-500: #22c55e;
+  --color-success-900: #14532d;
+
+  /* Semantic Colors - Warning */
+  --color-warning-50: #fefce8;
+  --color-warning-500: #eab308;
+  --color-warning-900: #713f12;
+
+  /* Semantic Colors - Error */
+  --color-error-50: #fef2f2;
+  --color-error-500: #ef4444;
+  --color-error-900: #7f1d1d;
+
+  /* Semantic Colors - Info */
+  --color-info-50: #eff6ff;
+  --color-info-500: #3b82f6;
+  --color-info-900: #1e3a8a;
+
+  /* Theme-aware colors (Light Mode) */
+  --color-background: #fafafa;
+  --color-surface: #ffffff;
+  --color-text-primary: #171717;
+  --color-text-secondary: #525252;
+  --color-text-muted: #737373;
+  --color-border: #e5e5e5;
 
   /* Spacing */
   --spacing-0: 0;
@@ -43,4 +72,26 @@
   --font-sans: "Inter", system-ui, sans-serif;
   --font-heading: "Poppins", "Inter", sans-serif;
   --font-mono: "Fira Code", monospace;
+}
+
+/* Dark mode via media query */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0a0a0a;
+    --color-surface: #171717;
+    --color-text-primary: #fafafa;
+    --color-text-secondary: #a3a3a3;
+    --color-text-muted: #737373;
+    --color-border: #404040;
+  }
+}
+
+/* Dark mode via class (manual toggle) */
+.dark-mode {
+  --color-background: #0a0a0a;
+  --color-surface: #171717;
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #737373;
+  --color-border: #404040;
 }
