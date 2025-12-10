@@ -4,7 +4,8 @@
   - "bash -c 'npm run clean'"
 
 "*.ts":
-  - "bash -c 'npm run dev'"
+  - "bash -c 'npm run build'"
+  - "bash -c 'npm run test:coverage'"
 
 "*.{ts,tsx,cjs,json,yaml,graphql,md,css,scss,html}":
   - "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"

@@ -9,14 +9,37 @@
     "lint:lockfile": "lockfile-lint --path package-lock.json",
     "lint:engines": "ls-engines",
     "lint:publish": "publint --strict",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf --glob ./{colors,scripts}/**/*.{d.ts,js} ./vitest*.{d.ts,js}",
+    "pretest": "npm run clean",
+    "test": "vitest run",
+    "pretest:coverage": "npm run clean",
+    "test:coverage": "vitest run --coverage",
+    "posttest:coverage": "coverage-badge-readme",
+    "validate": "npm run lint && npm run test && npm run build",
+    "clean": "rimraf --glob ./{lib,test}/**/*.{d.ts,js} ./vitest*.{d.ts,js}",
     "prebuild": "npm run clean",
     "build": "tsc",
     "prepare": "[ \"$CI\" = \"true\" ] || [ \"$GITHUB_ACTIONS\" = \"true\" ] && echo 'Skipping husky' && exit 0 || husky"
   },
-  "exports": {},
-  "files": [],
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js",
+      "require": "./lib/index.js"
+    },
+    "./css": "./lib/css/variables.css",
+    "./preset": {
+      "types": "./lib/preset.d.ts",
+      "import": "./lib/preset.js",
+      "require": "./lib/preset.js"
+    }
+  },
+  "files": [
+    "lib",
+    "assets",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">= 20"
   },
@@ -63,6 +86,8 @@
     "@semantic-release/git": "^10.0.1",
     "@tsconfig/node22": "^22.0.5",
     "@types/node": "^24.10.2",
+    "@vitest/coverage-v8": "^4.0.15",
+    "@zweer/coverage-badge-readme": "^1.2.2",
     "concurrently": "^9.2.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
@@ -71,6 +96,7 @@
     "publint": "^0.3.15",
     "rimraf": "^6.1.2",
     "semantic-release": "^25.0.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.15"
   }
 }

@@ -1,6 +1,25 @@
-# @kaze/brand
+# @kaze-no-manga/brand
+
+[![npm version](https://img.shields.io/npm/v/@kaze-no-manga/brand.svg?style=flat)](https://www.npmjs.com/package/@kaze-no-manga/brand)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Coverage Badge](https://img.shields.io/badge/coverage-100%25-brightgreen?style=flat)
 
 > Design system and brand assets for Kaze no Manga
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Tailwind CSS](#tailwind-css)
+  - [CSS Variables](#css-variables)
+  - [Design Tokens](#design-tokens)
+  - [Component Examples](#component-examples)
+- [Available Imports](#available-imports)
+- [Design Tokens](#design-tokens-1)
+- [Package Structure](#package-structure)
+- [Development](#development)
 
 ## Overview
 
@@ -11,48 +30,78 @@ This package contains the complete design system for Kaze no Manga, including de
 - 🎨 **Design Tokens**: Colors, typography, spacing, shadows, border-radius
 - 🎭 **Tailwind Preset**: Pre-configured Tailwind CSS preset
 - 📐 **Brand Guidelines**: Logo usage, color palette, typography rules
-- 📦 **Multiple Formats**: JSON, TypeScript, CSS variables
+- 📦 **Multiple Formats**: TypeScript, CSS variables
 
 ## Installation
 
 ```bash
-npm install @kaze/brand
+npm install @kaze-no-manga/brand
 ```
 
 ## Usage
 
 ### Tailwind CSS
 
-```javascript
-// tailwind.config.js
-import { preset } from '@kaze/brand'
+```typescript
+// tailwind.config.ts
+import { preset } from '@kaze-no-manga/brand/preset'
 
 export default {
   presets: [preset],
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./app/**/*.{ts,tsx}'],
 }
-```
-
-### Design Tokens (TypeScript)
-
-```typescript
-import { colors, spacing, typography } from '@kaze/brand'
-
-const primaryColor = colors.primary[500]
-const baseSpacing = spacing[4]
-const headingFont = typography.fontFamily.heading
 ```
 
 ### CSS Variables
 
-```css
-@import '@kaze/brand/css';
+```typescript
+// app/root.tsx
+import '@kaze-no-manga/brand/css'
+```
 
-.my-component {
-  color: var(--color-primary-500);
-  padding: var(--spacing-4);
-  font-family: var(--font-heading);
+### Design Tokens
+
+```typescript
+import { colors, typography, spacing } from '@kaze-no-manga/brand'
+
+const primaryColor = colors.primary[500]
+const headingFont = typography.fontFamily.heading
+const baseSpacing = spacing[4]
+```
+
+### Component Examples
+
+```tsx
+// Using Tailwind classes (from preset)
+<button className="bg-primary-500 text-white px-4 py-2 rounded-md">
+  Click me
+</button>
+
+// Using design tokens programmatically
+import { colors, spacing } from '@kaze-no-manga/brand'
+
+const styles = {
+  backgroundColor: colors.primary[500],
+  padding: spacing[4],
 }
+
+// Using CSS variables
+<div style={{ color: 'var(--color-primary-500)' }}>
+  Custom styled
+</div>
+```
+
+## Available Imports
+
+```typescript
+// All design tokens
+import { colors, typography, spacing, shadows, radius } from '@kaze-no-manga/brand'
+
+// Tailwind preset only
+import { preset } from '@kaze-no-manga/brand/preset'
+
+// CSS variables
+import '@kaze-no-manga/brand/css'
 ```
 
 ## Design Tokens

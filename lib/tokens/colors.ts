@@ -84,7 +84,7 @@ export const colors = {
     800: '#1e40af',
     900: '#1e3a8a',
   },
-} as const
+} as const;
 
-export type Colors = typeof colors
-export type ColorShade = keyof typeof colors.primary
+export type Colors = typeof colors;
+export type ColorShade = keyof typeof colors.primary;
