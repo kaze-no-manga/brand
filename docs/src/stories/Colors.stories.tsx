@@ -81,37 +81,127 @@ export const Neutral: Story = {
 export const ThemeAware: Story = {
   render: () => (
     <div>
-      <h3 style={{ marginBottom: '1rem', fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text-primary)' }}>Theme-Aware Colors</h3>
+      <h3
+        style={{
+          marginBottom: '1rem',
+          fontSize: '1.25rem',
+          fontWeight: 600,
+          color: 'var(--color-text-primary)',
+        }}
+      >
+        Theme-Aware Colors
+      </h3>
       <p style={{ marginBottom: '1rem', color: 'var(--color-text-secondary)' }}>
         These colors automatically adapt to light/dark mode via CSS variables.
       </p>
-      
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
-        <div style={{ padding: '1rem', backgroundColor: 'var(--color-background)', border: '1px solid var(--color-border)', borderRadius: '8px' }}>
-          <div style={{ color: 'var(--color-text-primary)', fontWeight: 600, marginBottom: '0.5rem' }}>Background</div>
-          <div style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>var(--color-background)</div>
-          <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', fontFamily: 'monospace' }}>
+
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '1rem',
+          marginBottom: '2rem',
+        }}
+      >
+        <div
+          style={{
+            padding: '1rem',
+            backgroundColor: 'var(--color-background)',
+            border: '1px solid var(--color-border)',
+            borderRadius: '8px',
+          }}
+        >
+          <div
+            style={{ color: 'var(--color-text-primary)', fontWeight: 600, marginBottom: '0.5rem' }}
+          >
+            Background
+          </div>
+          <div
+            style={{
+              color: 'var(--color-text-secondary)',
+              fontSize: '0.875rem',
+              marginBottom: '0.5rem',
+            }}
+          >
+            var(--color-background)
+          </div>
+          <div
+            style={{
+              fontSize: '0.75rem',
+              color: 'var(--color-text-muted)',
+              fontFamily: 'monospace',
+            }}
+          >
             Light: {colors.background.light} | Dark: {colors.background.dark}
           </div>
         </div>
-        
-        <div style={{ padding: '1rem', backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: '8px' }}>
-          <div style={{ color: 'var(--color-text-primary)', fontWeight: 600, marginBottom: '0.5rem' }}>Surface</div>
-          <div style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem', marginBottom: '0.5rem' }}>var(--color-surface)</div>
-          <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', fontFamily: 'monospace' }}>
+
+        <div
+          style={{
+            padding: '1rem',
+            backgroundColor: 'var(--color-surface)',
+            border: '1px solid var(--color-border)',
+            borderRadius: '8px',
+          }}
+        >
+          <div
+            style={{ color: 'var(--color-text-primary)', fontWeight: 600, marginBottom: '0.5rem' }}
+          >
+            Surface
+          </div>
+          <div
+            style={{
+              color: 'var(--color-text-secondary)',
+              fontSize: '0.875rem',
+              marginBottom: '0.5rem',
+            }}
+          >
+            var(--color-surface)
+          </div>
+          <div
+            style={{
+              fontSize: '0.75rem',
+              color: 'var(--color-text-muted)',
+              fontFamily: 'monospace',
+            }}
+          >
             Light: {colors.surface.light} | Dark: {colors.surface.dark}
           </div>
         </div>
       </div>
 
-      <h4 style={{ marginBottom: '1rem', fontSize: '1rem', fontWeight: 600, color: 'var(--color-text-primary)' }}>Usage Examples</h4>
-      <div style={{ backgroundColor: 'var(--color-surface)', padding: '1rem', border: '1px solid var(--color-border)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.875rem' }}>
-        <div style={{ color: 'var(--color-text-secondary)' }}>// Tailwind classes</div>
-        <div style={{ color: 'var(--color-text-primary)' }}>&lt;div className="bg-background text-foreground"&gt;</div>
-        <div style={{ color: 'var(--color-text-primary)' }}>&lt;div className="bg-surface border-border"&gt;</div>
+      <h4
+        style={{
+          marginBottom: '1rem',
+          fontSize: '1rem',
+          fontWeight: 600,
+          color: 'var(--color-text-primary)',
+        }}
+      >
+        Usage Examples
+      </h4>
+      <div
+        style={{
+          backgroundColor: 'var(--color-surface)',
+          padding: '1rem',
+          border: '1px solid var(--color-border)',
+          borderRadius: '8px',
+          fontFamily: 'monospace',
+          fontSize: '0.875rem',
+        }}
+      >
+        <div style={{ color: 'var(--color-text-secondary)' }}>{/* Tailwind classes */}</div>
+        <div style={{ color: 'var(--color-text-primary)' }}>
+          &lt;div className="bg-background text-foreground"&gt;
+        </div>
+        <div style={{ color: 'var(--color-text-primary)' }}>
+          &lt;div className="bg-surface border-border"&gt;
+        </div>
         <br />
-        <div style={{ color: 'var(--color-text-secondary)' }}>// CSS variables</div>
-        <div style={{ color: 'var(--color-text-primary)' }}>background: var(--color-background);</div>
+        <div style={{ color: 'var(--color-text-secondary)' }}>{/* CSS variables */}</div>
+        <div style={{ color: 'var(--color-text-primary)' }}>
+          background: var(--color-background);
+        </div>
         <div style={{ color: 'var(--color-text-primary)' }}>color: var(--color-text-primary);</div>
       </div>
     </div>

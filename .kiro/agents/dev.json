@@ -7,13 +7,13 @@
   "toolsSettings": {
     "write": {
       "allowedPaths": [
+        ".kiro/**",
+        "assets/**",
+        "docs/**",
         "lib/**",
-        "exports/**",
-        "logo/**",
         "scripts/**",
-        "typography/**",
-        "*.md",
-        ".kiro/**"
+        "test/**",
+        "*.md"
       ]
     },
     "shell": {
