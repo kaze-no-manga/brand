@@ -139,33 +139,71 @@ This creates all necessary favicon formats in `assets/favicons/` including:
 
 ### Colors
 
-Primary palette based on **purple/lilac** theme:
+**Primary Palette** (Purple/Lilac theme):
+```typescript
+colors.primary[50]   // #f5f3ff - Lightest backgrounds
+colors.primary[500]  // #8b5cf6 - Main brand color  
+colors.primary[900]  // #4c1d95 - Darkest text
+```
 
-- `primary`: Main brand color (purple/lilac shades)
-- `secondary`: Complementary color
-- `neutral`: Grays for text and backgrounds
-- `success`, `warning`, `error`, `info`: Semantic colors
+**Theme-aware Colors**:
+```typescript
+colors.background.light  // #fafafa
+colors.background.dark   // #0a0a0a
+colors.text.primary.light  // #171717
+colors.text.primary.dark   // #fafafa
+```
+
+**Semantic Colors**: `success`, `warning`, `error`, `info` with full 50-900 scales
 
 ### Typography
 
-- `fontFamily`: Heading, body, mono
-- `fontSize`: Scale from xs to 5xl
-- `fontWeight`: 300 to 900
-- `lineHeight`: Tight to loose
+**Font Families**:
+```typescript
+typography.fontFamily.sans     // ['Inter', 'system-ui', 'sans-serif']
+typography.fontFamily.heading  // ['Poppins', 'Inter', 'sans-serif']  
+typography.fontFamily.mono     // ['Fira Code', 'monospace']
+```
+
+**Font Scale** (1.25 modular scale):
+```typescript
+typography.fontSize.xs    // ['0.75rem', { lineHeight: '1rem' }]
+typography.fontSize.base  // ['1rem', { lineHeight: '1.5rem' }]
+typography.fontSize['5xl'] // ['3rem', { lineHeight: '1' }]
+```
 
 ### Spacing
 
-- Scale: 0, 1, 2, 4, 6, 8, 12, 16, 24, 32, 48, 64, 96, 128
-- Based on 4px grid system
+**4px Grid System**:
+```typescript
+spacing[1]   // 0.25rem (4px)
+spacing[4]   // 1rem (16px)  
+spacing[8]   // 2rem (32px)
+spacing[32]  // 8rem (128px)
+```
 
-### Shadows
+### Dark Mode
 
-- `sm`, `md`, `lg`, `xl`, `2xl`
-- Elevation system for depth
+**Automatic** (prefers-color-scheme):
+```css
+@media (prefers-color-scheme: dark) {
+  /* Automatically applied */
+}
+```
 
-### Border Radius
+**Manual Toggle**:
+```html
+<html className="dark-mode">
+  <!-- Dark mode active -->
+</html>
+```
 
-- `none`, `sm`, `md`, `lg`, `xl`, `2xl`, `full`
+**Tailwind Classes**:
+```tsx
+<div className="bg-background text-foreground">
+  <!-- Adapts automatically -->
+</div>
+```
 
 ## Brand Guidelines
 
@@ -203,7 +241,7 @@ The logo evokes "Kaze no Manga" (Wind of Manga) through:
 
 ```
 brand/
-├── src/
+├── lib/                    # Built TypeScript files
 │   ├── tokens/
 │   │   ├── colors.ts
 │   │   ├── typography.ts
@@ -216,28 +254,37 @@ brand/
 │   │   └── variables.css
 │   └── index.ts
 ├── assets/
-│   ├── logo/
-│   │   ├── logo-full.svg
-│   │   ├── logo-icon.svg
-│   │   └── logo-white.svg
-│   └── guidelines/
-│       └── brand-guidelines.pdf
-├── package.json
+│   ├── logo/               # Logo variants
+│   ├── square/             # Source logo files
+│   └── favicons/           # Generated favicons
+├── scripts/
+│   └── generate-favicons.ts
+├── test/                   # Test suite (124 tests)
 └── README.md
 ```
 
-## Development
+## Documentation
+
+Interactive documentation is available via Storybook:
+
+**🌐 Live Documentation**: [kaze-no-manga.github.io/brand](https://kaze-no-manga.github.io/brand)
+
+### Local Development
 
 ```bash
-# Install dependencies
-npm install
+# Start Storybook locally
+npm run docs:dev
 
-# Build package
-npm run build
-
-# Publish (private)
-npm publish
+# Build Storybook for production
+npm run docs:build
 ```
+
+The documentation includes:
+- Interactive color palette with copy-to-clipboard
+- Typography scale with live examples
+- Spacing grid visualization
+- Dark mode toggle
+- Code snippets for all design tokens
 
 ## Versioning
 
