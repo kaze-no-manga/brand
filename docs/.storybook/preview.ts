@@ -14,11 +14,19 @@ const preview: Preview = {
       values: [
         {
           name: 'light',
-          value: '#fafafa',
+          value: '#fafafa', // neutral-50
         },
         {
           name: 'dark',
-          value: '#0a0a0a',
+          value: '#0a0a0a', // neutral-950
+        },
+        {
+          name: 'surface-light',
+          value: '#ffffff', // white
+        },
+        {
+          name: 'surface-dark',
+          value: '#171717', // neutral-900
         },
       ],
     },

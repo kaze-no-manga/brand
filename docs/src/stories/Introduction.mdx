@@ -1,0 +1,57 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction" />
+
+# Kaze no Manga Design System
+
+Welcome to the **Kaze no Manga** design system documentation.
+
+This design system provides a complete set of design tokens and guidelines for building consistent user interfaces across the Kaze no Manga platform.
+
+## What's included
+
+- **🎨 Design Tokens**: Colors, typography, spacing, shadows, and border radius
+- **🌙 Dark Mode**: Full support for light and dark themes
+- **⚡ Tailwind Integration**: Pre-configured Tailwind CSS preset
+- **📱 Responsive**: Mobile-first design approach
+- **♿ Accessible**: WCAG 2.1 AA compliant color combinations
+
+## Getting Started
+
+```bash
+npm install @kaze-no-manga/brand
+```
+
+### Tailwind CSS Setup
+
+```typescript
+// tailwind.config.ts
+import { preset } from '@kaze-no-manga/brand/preset'
+
+export default {
+  presets: [preset],
+  content: ['./app/**/*.{ts,tsx}'],
+}
+```
+
+### CSS Variables
+
+```typescript
+// app/root.tsx
+import '@kaze-no-manga/brand/css'
+```
+
+## Design Philosophy
+
+The design system is built around the concept of **"Kaze no Manga"** (Wind of Manga), emphasizing:
+
+- **Fluidity**: Smooth, flowing interactions
+- **Readability**: Clear typography and comfortable spacing
+- **Accessibility**: Inclusive design for all users
+- **Consistency**: Unified visual language across platforms
+
+## Usage in Projects
+
+- **Web (React)**: Use Tailwind preset + CSS variables
+- **Mobile (Flutter)**: Reference design tokens for theme creation
+- **Documentation**: This Storybook for design guidelines
