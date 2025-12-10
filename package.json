@@ -1,6 +1,6 @@
 {
   "name": "@kaze-no-manga/brand",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "🎨 Design tokens and Tailwind preset for Kaze no Manga",
   "type": "module",
   "scripts": {
