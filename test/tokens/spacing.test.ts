@@ -54,9 +54,11 @@ describe('Spacing', () => {
         .sort((a, b) => a - b);
 
       for (let i = 1; i < values.length; i++) {
-        const current = parseFloat(spacing[values[i]].replace('rem', ''));
+        const currentKey = values[i] as keyof typeof spacing;
+        const previousKey = values[i - 1] as keyof typeof spacing;
+        const current = parseFloat(spacing[currentKey].replace('rem', ''));
         const previous =
-          values[i - 1] === 0 ? 0 : parseFloat(spacing[values[i - 1]].replace('rem', ''));
+          values[i - 1] === 0 ? 0 : parseFloat(spacing[previousKey].replace('rem', ''));
         expect(current).toBeGreaterThan(previous);
       }
     });

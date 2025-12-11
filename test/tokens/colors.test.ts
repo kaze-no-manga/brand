@@ -16,7 +16,7 @@ describe('Colors', () => {
 
   describe('Primary colors', () => {
     it('has complete shade scale', () => {
-      const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+      const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] as const;
       shades.forEach((shade) => {
         expect(colors.primary[shade]).toBeDefined();
         expect(typeof colors.primary[shade]).toBe('string');
@@ -39,7 +39,7 @@ describe('Colors', () => {
 
   describe('Neutral colors', () => {
     it('has complete shade scale', () => {
-      const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+      const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] as const;
       shades.forEach((shade) => {
         expect(colors.neutral[shade]).toBeDefined();
       });

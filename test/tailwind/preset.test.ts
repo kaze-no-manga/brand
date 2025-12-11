@@ -70,7 +70,7 @@ describe('Tailwind Preset', () => {
       ];
 
       requiredKeys.forEach((key) => {
-        expect(preset.theme.extend[key]).toBeDefined();
+        expect(preset.theme.extend[key as keyof typeof preset.theme.extend]).toBeDefined();
       });
     });
 
@@ -85,7 +85,7 @@ describe('Tailwind Preset', () => {
     it('uses extend pattern (not override)', () => {
       // Should extend, not replace default theme
       expect(preset.theme.extend).toBeDefined();
-      expect(preset.theme.colors).toBeUndefined(); // Should not override
+      expect('colors' in preset.theme).toBe(false); // Should not override
     });
 
     it('has valid Tailwind config structure', () => {
