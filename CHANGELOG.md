@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/kaze-no-manga/brand/compare/v1.0.0...v1.0.1) (2025-12-11)
+
+
+### Bug Fixes
+
+* resolve TypeScript compilation errors with strict tsconfig ([a3113d2](https://github.com/kaze-no-manga/brand/commit/a3113d252cb46580db1218e0472c15a9f30dda05))
+
 # 1.0.0 (2025-12-10)
 
 
